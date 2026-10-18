@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeThemes from Fai - Realtime Theme Studio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { background: var(--bg); color: var(--text); padding: 24px; min-height: 100vh; }
+    header { margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+    h1 { font-size: 24px; font-weight: 700; color: var(--accent); }
+    .subtitle { color: var(--muted); font-size: 14px; margin-top: 4px; }
+    .layout { display: grid; grid-template-columns: 360px 1fr; gap: 24px; }
+    .panel { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .panel-title { font-size: 16px; font-weight: 600; margin-bottom: 16px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    .control-group { margin-bottom: 14px; }
+    label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+    select, input[type="text"] { width: 100%; padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border); background: #0f172a; color: var(--text); font-size: 14px; }
+    .color-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; font-size: 13px; }
+    .color-picker-wrap { display: flex; align-items: center; gap: 8px; }
+    input[type="color"] { width: 36px; height: 28px; border: none; border-radius: 4px; cursor: pointer; background: transparent; }
+    .hex-val { font-family: monospace; font-size: 12px; color: var(--muted); width: 68px; }
+    button { width: 100%; padding: 10px 16px; border-radius: 8px; border: none; font-weight: 600; cursor: pointer; transition: 0.2s; font-size: 14px; }
+    .btn-apply { background: #0284c7; color: white; margin-top: 12px; }
+    .btn-apply:hover { background: #0369a1; }
+    .btn-reset { background: transparent; border: 1px solid var(--border); color: var(--muted); margin-top: 8px; }
+    .btn-reset:hover { background: var(--border); color: var(--text); }
+    .toast { margin-top: 12px; font-size: 13px; text-align: center; min-height: 20px; color: #4ade80; }
+
+    /* Code Preview Area */
+    .preview-window { border-radius: 8px; overflow: hidden; border: 2px solid; }
+    .window-header { display: flex; align-items: center; padding: 10px 16px; gap: 8px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #eab308; }
+    .dot-green { background: #22c55e; }
+    .window-title { font-size: 12px; margin-left: 12px; font-weight: 500; }
+    .code-editor { padding: 20px; font-family: 'Spline Sans Mono', 'Fira Code', 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.7; white-space: pre; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>De_themes From FAi 🔥 - Live Theme Studio</h1>
+      <p class="subtitle">Real-time color tuning with instant sync to Antigravity IDE</p>
+    </div>
+    <div style="font-size: 13px; color: var(--muted);">Target IDE: Antigravity IDE</div>
+  </header>
+
+  <div class="layout">
+    <!-- Controls Sidebar -->
+    <div class="panel">
+      <div class="panel-title">1. Base Theme Selection</div>
+      <div class="control-group">
+        <label for="themeSelect">Choose Theme Style (Outer UI):</label>
+        <select id="themeSelect">
+          <option value="Aurora Glass Light">Aurora Glass Light (Teal/Emerald Chrome)</option>
+          <option value="Autumn Terminal Light">Autumn Terminal Light (Orange/Warm Chrome)</option>
+          <option value="Chalk & Clay Light">Chalk & Clay Light (Warm Terracotta Chrome)</option>
+          <option value="Dust Bloom Light">Dust Bloom Light (Rose Blossom Chrome)</option>
+          <option value="Foggy Pine Light">Foggy Pine Light (Pine Green Chrome)</option>
+          <option value="Golden Hour Studio Light">Golden Hour Studio Light (Amber Sunset Chrome)</option>
+          <option value="Graph Paper Studio Light">Graph Paper Studio Light (Clean Slate Chrome)</option>
+          <option value="Ink Spill Light">Ink Spill Light (Deep Ink Chrome)</option>
+          <option value="Liquid Glass Light">Liquid Glass Light (Frosted Cyan Chrome)</option>
+          <option value="Marker Pack Light">Marker Pack Light (Vibrant Highlighter Chrome)</option>
+          <option value="National Parks Field Guide Light">National Parks Light (Earthy Forest Chrome)</option>
+          <option value="Sea Glass Light">Sea Glass Light (Soft Mint Chrome)</option>
+          <option value="Slate Orchard Light">Slate Orchard Light (Cool Slate Chrome)</option>
+          <option value="Watercolor Wash Light">Watercolor Wash Light (Artisan Violet Chrome)</option>
+          <option value="Aurora Glass Dark">Aurora Glass Dark</option>
+          <option value="Autumn Terminal Dark">Autumn Terminal Dark</option>
+          <option value="Chalk & Clay Dark">Chalk & Clay Dark</option>
+          <option value="Dust Bloom Dark">Dust Bloom Dark</option>
+          <option value="Foggy Pine Dark">Foggy Pine Dark</option>
+          <option value="Golden Hour Studio Dark">Golden Hour Studio Dark</option>
+          <option value="Graph Paper Studio Dark">Graph Paper Studio Dark</option>
+          <option value="Night Ferry Dark">Night Ferry Dark</option>
+        </select>
+      </div>
+
+      <div class="panel-title" style="margin-top: 20px;">2. Syntax Colors Tuning</div>
+      <div id="colorControls"></div>
+
+      <button class="btn-apply" id="applyBtn">Apply in Real-Time to IDE</button>
+      <button class="btn-reset" id="resetBtn">Reset to Default Colors</button>
+      <div class="toast" id="toastMsg"></div>
+    </div>
+
+    <!-- Live Preview -->
+    <div>
+      <div class="panel" style="padding: 0;">
+        <div class="preview-window" id="previewWindow">
+          <div class="window-header" id="previewHeader">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="window-title" id="previewTitle">transcriptService.js & c.cpp</span>
+          </div>
+          <div class="code-editor" id="codeEditor"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const THEME_CHROME = {
+      "Aurora Glass Light": { bg: "#EEF7F5", chrome: "#1E8F7D", fg: "#16262A", border: "#CBE0DB" },
+      "Autumn Terminal Light": { bg: "#FAF7F2", chrome: "#B45309", fg: "#241E19", border: "#EADDCF" },
+      "Chalk & Clay Light": { bg: "#FAF6F5", chrome: "#C05646", fg: "#261E1D", border: "#E8D8D5" },
+      "Dust Bloom Light": { bg: "#FBF6F7", chrome: "#B85D7A", fg: "#261D20", border: "#E8D5DA" },
+      "Foggy Pine Light": { bg: "#F4F7F5", chrome: "#3E7B66", fg: "#1A2420", border: "#D2E0D8" },
+      "Golden Hour Studio Light": { bg: "#FAF7F0", chrome: "#D97706", fg: "#241F16", border: "#EADEC8" },
+      "Graph Paper Studio Light": { bg: "#F5F8FA", chrome: "#3B82F6", fg: "#1A2228", border: "#D0DEE8" },
+      "Ink Spill Light": { bg: "#F6F7FA", chrome: "#334155", fg: "#181D26", border: "#D2D9E4" },
+      "Liquid Glass Light": { bg: "#F0F9FA", chrome: "#0EA5E9", fg: "#14252B", border: "#C6E8ED" },
+      "Marker Pack Light": { bg: "#FAFAF5", chrome: "#84CC16", fg: "#22241A", border: "#E2E5CC" },
+      "National Parks Field Guide Light": { bg: "#F5F7F3", chrome: "#4D7C0F", fg: "#1F2418", border: "#D4DFCC" },
+      "Sea Glass Light": { bg: "#F2F9F7", chrome: "#14B8A6", fg: "#162623", border: "#C7E8E0" },
+      "Slate Orchard Light": { bg: "#F4F6F8", chrome: "#64748B", fg: "#1C2026", border: "#D4DCE4" },
+      "Watercolor Wash Light": { bg: "#F8F6FA", chrome: "#8B5CF6", fg: "#221D28", border: "#DFD5EC" },
+      "Aurora Glass Dark": { bg: "#101D1B", chrome: "#2ECB9A", fg: "#E6F3F0", border: "#1C3632" },
+      "Autumn Terminal Dark": { bg: "#1D1916", chrome: "#F59E0B", fg: "#F6EEE3", border: "#3A2E24" },
+      "Chalk & Clay Dark": { bg: "#1C1817", chrome: "#F87171", fg: "#F6EAE7", border: "#382927" },
+      "Dust Bloom Dark": { bg: "#1E1719", chrome: "#FB7185", fg: "#F8E9ED", border: "#3B272E" },
+      "Foggy Pine Dark": { bg: "#141C18", chrome: "#34D399", fg: "#E5F0E9", border: "#22352B" },
+      "Golden Hour Studio Dark": { bg: "#1D1A14", chrome: "#FBBF24", fg: "#F6EEDD", border: "#3A301E" },
+      "Graph Paper Studio Dark": { bg: "#141A1E", chrome: "#60A5FA", fg: "#E4EDF5", border: "#20313C" },
+      "Night Ferry Dark": { bg: "#15181E", chrome: "#818CF8", fg: "#E5EAF3", border: "#232A39" }
+    };
+
+    const DEFAULT_COLORS = {
+      func: { label: "Functions (call & def)", val: "#0066CC" },
+      method: { label: "Methods", val: "#0284C7" },
+      variable: { label: "Variables", val: "#0F766E" },
+      param: { label: "Parameters", val: "#EA580C" },
+      type: { label: "Classes & Types", val: "#7C3AED" },
+      primType: { label: "Primitive Types (int, string, void)", val: "#BE185D" },
+      keyword: { label: "Keywords (if, else, return)", val: "#1D4ED8" },
+      storage: { label: "Storage (const, let, export)", val: "#9333EA" },
+      string: { label: "Strings", val: "#15803D" },
+      number: { label: "Numbers & Constants", val: "#C2410C" },
+      operator: { label: "Operators (+, ===, <<)", val: "#DC2626" },
+      bracket: { label: "Brackets & Parentheses", val: "#D97706" },
+      comment: { label: "Comments", val: "#64748B" }
+    };
+
+    let currentColors = JSON.parse(JSON.stringify(DEFAULT_COLORS));
+
+    function renderControls() {
+      const container = document.getElementById('colorControls');
+      container.innerHTML = '';
+      for (const [key, item] of Object.entries(currentColors)) {
+        const row = document.createElement('div');
+        row.className = 'color-row';
+        row.innerHTML = `
+          <span>${item.label}</span>
+          <div class="color-picker-wrap">
+            <input type="color" id="picker_${key}" value="${item.val}">
+            <span class="hex-val" id="hex_${key}">${item.val}</span>
+          </div>
+        `;
+        container.appendChild(row);
+
+        const picker = row.querySelector('input');
+        picker.addEventListener('input', (e) => {
+          currentColors[key].val = e.target.value;
+          document.getElementById(`hex_${key}`).textContent = e.target.value;
+          updatePreview();
+        });
+      }
+    }
+
+    function updatePreview() {
+      const themeKey = document.getElementById('themeSelect').value;
+      const chrome = THEME_CHROME[themeKey] || THEME_CHROME["Aurora Glass Light"];
+
+      const win = document.getElementById('previewWindow');
+      const header = document.getElementById('previewHeader');
+      const editor = document.getElementById('codeEditor');
+
+      win.style.borderColor = chrome.border;
+      header.style.background = chrome.chrome;
+      header.style.color = '#FFFFFF';
+      editor.style.background = chrome.bg;
+      editor.style.color = chrome.fg;
+
+      const c = currentColors;
+
+      editor.innerHTML = `
+<span style="color:${c.comment.val}; font-style:italic;">// transcriptService.js: robust json validator</span>
+<span style="color:${c.storage.val}; font-weight:bold;">import</span> <span style="color:${c.type.val}; font-weight:bold;">Student</span> <span style="color:${c.storage.val}; font-weight:bold;">from</span> <span style="color:${c.string.val};">'./Student.js'</span><span style="color:${c.bracket.val};">;</span>
+
+<span style="color:${c.storage.val}; font-weight:bold;">export</span> <span style="color:${c.storage.val}; font-weight:bold;">function</span> <span style="color:${c.func.val}; font-weight:bold;">processTranscripts</span><span style="color:${c.bracket.val};">(</span><span style="color:${c.param.val}; font-weight:bold;">rawJson</span><span style="color:${c.bracket.val};">)</span> <span style="color:${c.bracket.val};">{</span>
+  <span style="color:${c.keyword.val}; font-weight:bold;">if</span> <span style="color:${c.bracket.val};">(</span><span style="color:${c.keyword.val};">typeof</span> <span style="color:${c.variable.val};">rawJson</span> <span style="color:${c.operator.val}; font-weight:bold;">!==</span> <span style="color:${c.string.val};">'string'</span><span style="color:${c.bracket.val};">)</span> <span style="color:${c.bracket.val};">{</span>
+    <span style="color:${c.keyword.val}; font-weight:bold;">throw</span> <span style="color:${c.keyword.val}; font-weight:bold;">new</span> <span style="color:${c.type.val}; font-weight:bold;">TypeError</span><span style="color:${c.bracket.val};">(</span><span style="color:${c.string.val};">'Incoming transcript payload must be a string'</span><span style="color:${c.bracket.val};">)</span><span style="color:${c.bracket.val};">;</span>
+  <span style="color:${c.bracket.val};">}</span>
+
+  <span style="color:${c.storage.val}; font-weight:bold;">const</span> <span style="color:${c.variable.val};">seenIds</span> <span style="color:${c.operator.val}; font-weight:bold;">=</span> <span style="color:${c.keyword.val}; font-weight:bold;">new</span> <span style="color:${c.type.val}; font-weight:bold;">Set</span><span style="color:${c.bracket.val};">()</span><span style="color:${c.bracket.val};">;</span>
+  <span style="color:${c.storage.val}; font-weight:bold;">const</span> <span style="color:${c.variable.val};">totalStudents</span> <span style="color:${c.operator.val}; font-weight:bold;">=</span> <span style="color:${c.number.val}; font-weight:bold;">101</span><span style="color:${c.bracket.val};">;</span>
+  <span style="color:${c.keyword.val}; font-weight:bold;">return</span> <span style="color:${c.bracket.val};">{</span> <span style="color:${c.func.val};">total</span><span style="color:${c.bracket.val};">:</span> <span style="color:${c.variable.val};">totalStudents</span> <span style="color:${c.bracket.val};">}</span><span style="color:${c.bracket.val};">;</span>
+<span style="color:${c.bracket.val};">}</span>
+
+<span style="color:${c.comment.val}; font-style:italic;">// c.cpp: university calculator</span>
+<span style="color:${c.preprocessor.val ?? '#0E7490'}; font-weight:bold;">#include</span> <span style="color:${c.string.val};">&lt;iostream&gt;</span>
+<span style="color:${c.storage.val}; font-weight:bold;">using</span> <span style="color:${c.storage.val}; font-weight:bold;">namespace</span> <span style="color:${c.type.val}; font-weight:bold;">std</span><span style="color:${c.bracket.val};">;</span>
+
+<span style="color:${c.primType.val}; font-weight:bold;">int</span> <span style="color:${c.func.val}; font-weight:bold;">calculateMerit</span><span style="color:${c.bracket.val};">(</span><span style="color:${c.primType.val}; font-weight:bold;">int</span> <span style="color:${c.param.val}; font-weight:bold;">matric</span><span style="color:${c.bracket.val};">,</span> <span style="color:${c.primType.val}; font-weight:bold;">int</span> <span style="color:${c.param.val}; font-weight:bold;">entryTest</span><span style="color:${c.bracket.val};">)</span> <span style="color:${c.bracket.val};">{</span>
+  <span style="color:${c.keyword.val}; font-weight:bold;">return</span> <span style="color:${c.variable.val};">matric</span> <span style="color:${c.operator.val}; font-weight:bold;">+</span> <span style="color:${c.variable.val};">entryTest</span><span style="color:${c.bracket.val};">;</span>
+<span style="color:${c.bracket.val};">}</span>
+      `;
+    }
+
+    document.getElementById('themeSelect').addEventListener('change', updatePreview);
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      currentColors = JSON.parse(JSON.stringify(DEFAULT_COLORS));
+      renderControls();
+      updatePreview();
+      document.getElementById('toastMsg').textContent = 'Reset to factory vibrant colors.';
+    });
+
+    document.getElementById('applyBtn').addEventListener('click', async () => {
+      const toast = document.getElementById('toastMsg');
+      toast.style.color = '#38bdf8';
+      toast.textContent = 'Applying to Antigravity IDE...';
+
+      const payload = {
+        themeName: "De_themes From FAi 🔥 " + document.getElementById('themeSelect').value,
+        colors: currentColors
+      };
+
+      try {
+        const res = await fetch('/api/apply', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.success) {
+          toast.style.color = '#4ade80';
+          toast.textContent = 'Active in Antigravity IDE! Check your code window.';
+        } else {
+          toast.style.color = '#f87171';
+          toast.textContent = 'Error: ' + data.message;
+        }
+      } catch (err) {
+        toast.style.color = '#f87171';
+        toast.textContent = 'Save script command copied to clipboard / generated!';
+      }
+    });
+
+    renderControls();
+    updatePreview();
+  </script>
+</body>
+</html>

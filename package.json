@@ -1,0 +1,227 @@
+{
+  "name": "de-themes-from-fai",
+  "displayName": "De_themes From FAi 🔥",
+  "description": "36 distinct theme variants featuring explorer gradient depth and unique, ultra-readable syntax color groupings tailored for each theme personality.",
+  "version": "1.0.0",
+  "publisher": "sudo-fai",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "color-theme",
+    "fai",
+    "de-themes",
+    "syntax",
+    "gradient",
+    "light",
+    "dark",
+    "high-contrast"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "De_themes From FAi 🔥 Aurora Glass Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/aurora-glass-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Aurora Glass Light",
+        "uiTheme": "vs",
+        "path": "./themes/aurora-glass-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Autumn Terminal Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/autumn-terminal-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Autumn Terminal Light",
+        "uiTheme": "vs",
+        "path": "./themes/autumn-terminal-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Chalk & Clay Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/chalk-clay-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Chalk & Clay Light",
+        "uiTheme": "vs",
+        "path": "./themes/chalk-clay-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Dust Bloom Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dust-bloom-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Dust Bloom Light",
+        "uiTheme": "vs",
+        "path": "./themes/dust-bloom-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Foggy Pine Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/foggy-pine-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Foggy Pine Light",
+        "uiTheme": "vs",
+        "path": "./themes/foggy-pine-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Golden Hour Studio Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/golden-hour-studio-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Golden Hour Studio Light",
+        "uiTheme": "vs",
+        "path": "./themes/golden-hour-studio-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Graph Paper Studio Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/graph-paper-studio-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Graph Paper Studio Light",
+        "uiTheme": "vs",
+        "path": "./themes/graph-paper-studio-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Ink Spill Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/ink-spill-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Ink Spill Light",
+        "uiTheme": "vs",
+        "path": "./themes/ink-spill-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Liquid Glass Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/liquid-glass-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Liquid Glass Light",
+        "uiTheme": "vs",
+        "path": "./themes/liquid-glass-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Marker Pack Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/marker-pack-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Marker Pack Light",
+        "uiTheme": "vs",
+        "path": "./themes/marker-pack-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 National Parks Field Guide Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/national-parks-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 National Parks Field Guide Light",
+        "uiTheme": "vs",
+        "path": "./themes/national-parks-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Night Ferry Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/night-ferry-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Night Ferry Light",
+        "uiTheme": "vs",
+        "path": "./themes/night-ferry-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Pastel Field Notes Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/pastel-field-notes-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Pastel Field Notes Light",
+        "uiTheme": "vs",
+        "path": "./themes/pastel-field-notes-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Sea Glass Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/sea-glass-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Sea Glass Light",
+        "uiTheme": "vs",
+        "path": "./themes/sea-glass-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Slate Orchard Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/slate-orchard-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Slate Orchard Light",
+        "uiTheme": "vs",
+        "path": "./themes/slate-orchard-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Studio Monochrome Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/studio-monochrome-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Studio Monochrome Light",
+        "uiTheme": "vs",
+        "path": "./themes/studio-monochrome-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Swiss International Style Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/swiss-style-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Swiss International Style Light",
+        "uiTheme": "vs",
+        "path": "./themes/swiss-style-light-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Watercolor Wash Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/watercolor-wash-dark-color-theme.json"
+      },
+      {
+        "label": "De_themes From FAi 🔥 Watercolor Wash Light",
+        "uiTheme": "vs",
+        "path": "./themes/watercolor-wash-light-color-theme.json"
+      }
+    ],
+    "configuration": {
+      "title": "De_themes From FAi 🔥",
+      "properties": {
+        "deThemesFromFai.autoSwitchFont": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically match editor.fontFamily to active theme design."
+        }
+      }
+    }
+  },
+  "license": "MIT",
+  "author": {
+    "name": "sudo-fai"
+  }
+}
